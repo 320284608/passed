@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>密码跳转网站</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-image: url('https://unsplash.it/1080/2460?random'); /* 替换为您的 API 背景图片 URL */
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 16px;
+      text-align: center;
+      animation: fontChange 5s infinite; /* 添加动画 */
+    }
+
+    @keyframes fontChange {
+      0% {
+        font-family: Arial;
+      }
+
+      25% {
+        font-family: Times New Roman;
+      }
+
+      50% {
+        font-family: Courier New;
+      }
+
+      75% {
+        font-family: Verdana;
+      }
+
+      100% {
+        font-family: Arial;
+      }
+    }
+
+  .number-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+  .number-buttons button {
+      width: 30%;
+      padding: 10px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #f8bbd0, #e1bee7, #c5cae9, #b2dfdb, #80cbc4, #4db6ac, #26a69a, #009688);
+      background-size: 400% 400%;
+      animation: gradientAnimation 5s ease infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(45deg, #f8bbd0, #e1bee7, #c5cae9, #b2dfdb, #80cbc4, #4db6ac, #26a69a, #009688);
+      background-size: 400% 400%;
+      animation: gradientAnimation 5s ease infinite;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>输入密码</h2>
+  <form action="verify_password.php" method="post">
+    <input type="password" name="password">
+    <div class="number-buttons">
+      <button type="button" onclick="addNumber('1')">1</button>
+      <button type="button" onclick="addNumber('2')">2</button>
+      <button type="button" onclick="addNumber('3')">3</button>
+      <button type="button" onclick="addNumber('4')">4</button>
+      <button type="button" onclick="addNumber('5')">5</button>
+      <button type="button" onclick="addNumber('6')">6</button>
+      <button type="button" onclick="addNumber('7')">7</button>
+      <button type="button" onclick="addNumber('8')">8</button>
+      <button type="button" onclick="addNumber('9')">9</button>
+      <button type="button" onclick="addNumber('0')">0</button>
+    </div>
+    <button type="submit">确定</button>
+  </form>
+
+  <script>
+    function addNumber(num) {
+      var passwordInput = document.querySelector('input[name="password"]');
+      passwordInput.value += num;
+    }
+  </script>
+</body>
+
+</html>
